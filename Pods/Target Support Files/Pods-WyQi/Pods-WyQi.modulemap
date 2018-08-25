@@ -1,0 +1,6 @@
+framework module Pods_WyQi {
+  umbrella header "Pods-WyQi-umbrella.h"
+
+  export *
+  module * { export * }
+}
