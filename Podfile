@@ -6,5 +6,6 @@ target 'WyQi' do
 
   # Pods for WyQi
     pod 'RealmSwift'
+    pod 'SVProgressHUD'
     pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 end

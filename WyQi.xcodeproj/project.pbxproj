@@ -9,11 +9,45 @@
 /* Begin PBXBuildFile section */
 		44EC0B37B08FA47281B6E7BA /* Pods_WyQi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7A67F8E3E1B26B0F205124 /* Pods_WyQi.framework */; };
 		E20271A12131F49D00732822 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20271A02131F49D00732822 /* AppDelegate.swift */; };
-		E20271A32131F49D00732822 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20271A22131F49D00732822 /* ViewController.swift */; };
+		E20271A32131F49D00732822 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20271A22131F49D00732822 /* SearchViewController.swift */; };
 		E20271A62131F49D00732822 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20271A42131F49D00732822 /* Main.storyboard */; };
 		E20271A82131F49E00732822 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E20271A72131F49E00732822 /* Assets.xcassets */; };
 		E20271AB2131F49E00732822 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20271A92131F49E00732822 /* LaunchScreen.storyboard */; };
+		E285F5E6213372A2002EE51D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E285F5E5213372A2002EE51D /* WebViewController.swift */; };
+		E2C24DC8213253C7004A614C /* WPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24DC7213253C7004A614C /* WPage.swift */; };
+		E2C24DD021325904004A614C /* WyQiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24DCF21325904004A614C /* WyQiTests.swift */; };
+		E2C24DDD21325AE6004A614C /* CodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24DDC21325AE6004A614C /* CodableExtensions.swift */; };
+		E2C24DE02132609C004A614C /* SavedPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24DDF2132609C004A614C /* SavedPages.swift */; };
+		E2C24DE2213260A9004A614C /* HistoryPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24DE1213260A9004A614C /* HistoryPages.swift */; };
+		E2C24DE62132746A004A614C /* URLConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24DE52132746A004A614C /* URLConfiguration.swift */; };
+		E2C24DE9213274D9004A614C /* ASOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24DE8213274D9004A614C /* ASOperations.swift */; };
+		E2C24DEB2132750A004A614C /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24DEA2132750A004A614C /* RequestData.swift */; };
+		E2C24DEE21327544004A614C /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24DED21327544004A614C /* ImageRequest.swift */; };
+		E2C24DF321327582004A614C /* HttpWorkerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24DF221327582004A614C /* HttpWorkerFactory.swift */; };
+		E2C24DF521327590004A614C /* HttpNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24DF421327590004A614C /* HttpNetworkWorker.swift */; };
+		E2C24DFA2132D22B004A614C /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24DF92132D22B004A614C /* SearchViewCell.swift */; };
+		E2C24DFC2132D61E004A614C /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24DFB2132D61E004A614C /* HttpError.swift */; };
+		E2C24DFE2132D65A004A614C /* HttpWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24DFD2132D65A004A614C /* HttpWorker.swift */; };
+		E2C24E002132D6A5004A614C /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24DFF2132D6A5004A614C /* HttpRequest.swift */; };
+		E2C24E022132D72F004A614C /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24E012132D72F004A614C /* HttpResponse.swift */; };
+		E2C24E062132F7EF004A614C /* SearchWikiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24E052132F7EF004A614C /* SearchWikiService.swift */; };
+		E2C24E0921332B34004A614C /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24E0821332B34004A614C /* Dynamic.swift */; };
+		E2C24E0C21332BF4004A614C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24E0B21332BF4004A614C /* SearchViewModel.swift */; };
+		E2C24E0E21332C1E004A614C /* SearchViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24E0D21332C1E004A614C /* SearchViewCellModel.swift */; };
+		E2E0A2152131F7BF00F0DC48 /* RLMDBHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E0A2142131F7BF00F0DC48 /* RLMDBHandler.swift */; };
+		E2E0A2172131F7C800F0DC48 /* RLMDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E0A2162131F7C800F0DC48 /* RLMDataStore.swift */; };
+		E2E0A2192131FD5200F0DC48 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E0A2182131FD5200F0DC48 /* FileHelper.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E2C24DD221325904004A614C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E20271952131F49D00732822 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E202719C2131F49D00732822;
+			remoteInfo = WyQi;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0B7A67F8E3E1B26B0F205124 /* Pods_WyQi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WyQi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -21,11 +55,37 @@
 		67698D887AC86673A806590C /* Pods-WyQi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WyQi.release.xcconfig"; path = "Pods/Target Support Files/Pods-WyQi/Pods-WyQi.release.xcconfig"; sourceTree = "<group>"; };
 		E202719D2131F49D00732822 /* WyQi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WyQi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E20271A02131F49D00732822 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E20271A22131F49D00732822 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E20271A22131F49D00732822 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E20271A52131F49D00732822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E20271A72131F49E00732822 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E20271AA2131F49E00732822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E20271AC2131F49E00732822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E285F5E5213372A2002EE51D /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		E2C24DC7213253C7004A614C /* WPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPage.swift; sourceTree = "<group>"; };
+		E2C24DCD21325904004A614C /* WyQiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WyQiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2C24DCF21325904004A614C /* WyQiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WyQiTests.swift; sourceTree = "<group>"; };
+		E2C24DD121325904004A614C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2C24DDC21325AE6004A614C /* CodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtensions.swift; sourceTree = "<group>"; };
+		E2C24DDF2132609C004A614C /* SavedPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPages.swift; sourceTree = "<group>"; };
+		E2C24DE1213260A9004A614C /* HistoryPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPages.swift; sourceTree = "<group>"; };
+		E2C24DE52132746A004A614C /* URLConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConfiguration.swift; sourceTree = "<group>"; };
+		E2C24DE8213274D9004A614C /* ASOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASOperations.swift; sourceTree = "<group>"; };
+		E2C24DEA2132750A004A614C /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
+		E2C24DED21327544004A614C /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
+		E2C24DF221327582004A614C /* HttpWorkerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpWorkerFactory.swift; sourceTree = "<group>"; };
+		E2C24DF421327590004A614C /* HttpNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpNetworkWorker.swift; sourceTree = "<group>"; };
+		E2C24DF92132D22B004A614C /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
+		E2C24DFB2132D61E004A614C /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
+		E2C24DFD2132D65A004A614C /* HttpWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpWorker.swift; sourceTree = "<group>"; };
+		E2C24DFF2132D6A5004A614C /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		E2C24E012132D72F004A614C /* HttpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
+		E2C24E052132F7EF004A614C /* SearchWikiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWikiService.swift; sourceTree = "<group>"; };
+		E2C24E0821332B34004A614C /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		E2C24E0B21332BF4004A614C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		E2C24E0D21332C1E004A614C /* SearchViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCellModel.swift; sourceTree = "<group>"; };
+		E2E0A2142131F7BF00F0DC48 /* RLMDBHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLMDBHandler.swift; sourceTree = "<group>"; };
+		E2E0A2162131F7C800F0DC48 /* RLMDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLMDataStore.swift; sourceTree = "<group>"; };
+		E2E0A2182131FD5200F0DC48 /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +94,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				44EC0B37B08FA47281B6E7BA /* Pods_WyQi.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2C24DCA21325904004A614C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				E202719F2131F49D00732822 /* WyQi */,
+				E2C24DCE21325904004A614C /* WyQiTests */,
 				E202719E2131F49D00732822 /* Products */,
 				52AA491DEFCE65A7CCE85E6F /* Pods */,
 				1B80698D8023C7EB4A2EDCFC /* Frameworks */,
@@ -71,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				E202719D2131F49D00732822 /* WyQi.app */,
+				E2C24DCD21325904004A614C /* WyQiTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,14 +147,190 @@
 		E202719F2131F49D00732822 /* WyQi */ = {
 			isa = PBXGroup;
 			children = (
-				E20271A02131F49D00732822 /* AppDelegate.swift */,
-				E20271A22131F49D00732822 /* ViewController.swift */,
+				E2C24DD721325AB0004A614C /* Extensions */,
+				E2C24DC6213251DD004A614C /* Models */,
+				E2E0A2102131F73700F0DC48 /* Others */,
+				E2E0A20F2131F72A00F0DC48 /* Resources */,
+				E2C24DE3213273D8004A614C /* Services */,
+				E2E0A2122131F77A00F0DC48 /* Store */,
+				E2E0A20E2131F6F200F0DC48 /* Supporting Files */,
+				E2C24E0721332B1D004A614C /* ViewModels */,
+				E2E0A2112131F74C00F0DC48 /* Views */,
+			);
+			path = WyQi;
+			sourceTree = "<group>";
+		};
+		E285F5E421337279002EE51D /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				E285F5E5213372A2002EE51D /* WebViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		E2C24DC6213251DD004A614C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E2C24DC7213253C7004A614C /* WPage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E2C24DCE21325904004A614C /* WyQiTests */ = {
+			isa = PBXGroup;
+			children = (
+				E2C24DCF21325904004A614C /* WyQiTests.swift */,
+				E2C24DD121325904004A614C /* Info.plist */,
+			);
+			path = WyQiTests;
+			sourceTree = "<group>";
+		};
+		E2C24DD721325AB0004A614C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2C24DDC21325AE6004A614C /* CodableExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E2C24DDE21325F88004A614C /* DBModels */ = {
+			isa = PBXGroup;
+			children = (
+				E2C24DDF2132609C004A614C /* SavedPages.swift */,
+				E2C24DE1213260A9004A614C /* HistoryPages.swift */,
+			);
+			path = DBModels;
+			sourceTree = "<group>";
+		};
+		E2C24DE3213273D8004A614C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E2C24DE4213273DF004A614C /* Networking */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E2C24DE4213273DF004A614C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E2C24DEF21327564004A614C /* Core */,
+				E2C24DEC21327533004A614C /* Requests */,
+				E2C24DE7213274CA004A614C /* Operations */,
+				E2C24DE52132746A004A614C /* URLConfiguration.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E2C24DE7213274CA004A614C /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E2C24DE8213274D9004A614C /* ASOperations.swift */,
+				E2C24DEA2132750A004A614C /* RequestData.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		E2C24DEC21327533004A614C /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				E2C24DED21327544004A614C /* ImageRequest.swift */,
+				E2C24E052132F7EF004A614C /* SearchWikiService.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		E2C24DEF21327564004A614C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E2C24DF221327582004A614C /* HttpWorkerFactory.swift */,
+				E2C24DF421327590004A614C /* HttpNetworkWorker.swift */,
+				E2C24DFB2132D61E004A614C /* HttpError.swift */,
+				E2C24DFD2132D65A004A614C /* HttpWorker.swift */,
+				E2C24DFF2132D6A5004A614C /* HttpRequest.swift */,
+				E2C24E012132D72F004A614C /* HttpResponse.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E2C24DF62132D179004A614C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				E20271A22131F49D00732822 /* SearchViewController.swift */,
+				E2C24DF92132D22B004A614C /* SearchViewCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		E2C24E0721332B1D004A614C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E2C24E0A21332BE3004A614C /* Search */,
+				E2C24E0821332B34004A614C /* Dynamic.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E2C24E0A21332BE3004A614C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				E2C24E0B21332BF4004A614C /* SearchViewModel.swift */,
+				E2C24E0D21332C1E004A614C /* SearchViewCellModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		E2E0A20E2131F6F200F0DC48 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E20271AC2131F49E00732822 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E2E0A20F2131F72A00F0DC48 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				E20271A42131F49D00732822 /* Main.storyboard */,
 				E20271A72131F49E00732822 /* Assets.xcassets */,
 				E20271A92131F49E00732822 /* LaunchScreen.storyboard */,
-				E20271AC2131F49E00732822 /* Info.plist */,
 			);
-			path = WyQi;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E2E0A2102131F73700F0DC48 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				E20271A02131F49D00732822 /* AppDelegate.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		E2E0A2112131F74C00F0DC48 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E285F5E421337279002EE51D /* WebView */,
+				E2C24DF62132D179004A614C /* Search */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E2E0A2122131F77A00F0DC48 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				E2C24DDE21325F88004A614C /* DBModels */,
+				E2E0A2132131F78B00F0DC48 /* RealmDB */,
+				E2E0A2182131FD5200F0DC48 /* FileHelper.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		E2E0A2132131F78B00F0DC48 /* RealmDB */ = {
+			isa = PBXGroup;
+			children = (
+				E2E0A2142131F7BF00F0DC48 /* RLMDBHandler.swift */,
+				E2E0A2162131F7C800F0DC48 /* RLMDataStore.swift */,
+			);
+			path = RealmDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +355,24 @@
 			productReference = E202719D2131F49D00732822 /* WyQi.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E2C24DCC21325904004A614C /* WyQiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2C24DD421325904004A614C /* Build configuration list for PBXNativeTarget "WyQiTests" */;
+			buildPhases = (
+				E2C24DC921325904004A614C /* Sources */,
+				E2C24DCA21325904004A614C /* Frameworks */,
+				E2C24DCB21325904004A614C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2C24DD321325904004A614C /* PBXTargetDependency */,
+			);
+			name = WyQiTests;
+			productName = WyQiTests;
+			productReference = E2C24DCD21325904004A614C /* WyQiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -122,6 +385,10 @@
 				TargetAttributes = {
 					E202719C2131F49D00732822 = {
 						CreatedOnToolsVersion = 9.4.1;
+					};
+					E2C24DCC21325904004A614C = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = E202719C2131F49D00732822;
 					};
 				};
 			};
@@ -139,6 +406,7 @@
 			projectRoot = "";
 			targets = (
 				E202719C2131F49D00732822 /* WyQi */,
+				E2C24DCC21325904004A614C /* WyQiTests */,
 			);
 		};
 /* End PBXProject section */
@@ -151,6 +419,13 @@
 				E20271AB2131F49E00732822 /* LaunchScreen.storyboard in Resources */,
 				E20271A82131F49E00732822 /* Assets.xcassets in Resources */,
 				E20271A62131F49D00732822 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2C24DCB21325904004A614C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,12 +442,14 @@
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -204,12 +481,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E20271A32131F49D00732822 /* ViewController.swift in Sources */,
+				E2C24DEB2132750A004A614C /* RequestData.swift in Sources */,
+				E2C24E002132D6A5004A614C /* HttpRequest.swift in Sources */,
+				E2C24DE62132746A004A614C /* URLConfiguration.swift in Sources */,
+				E2C24DC8213253C7004A614C /* WPage.swift in Sources */,
+				E2C24DFE2132D65A004A614C /* HttpWorker.swift in Sources */,
+				E2E0A2152131F7BF00F0DC48 /* RLMDBHandler.swift in Sources */,
+				E20271A32131F49D00732822 /* SearchViewController.swift in Sources */,
+				E2C24E062132F7EF004A614C /* SearchWikiService.swift in Sources */,
+				E2C24DE2213260A9004A614C /* HistoryPages.swift in Sources */,
+				E2C24DF321327582004A614C /* HttpWorkerFactory.swift in Sources */,
 				E20271A12131F49D00732822 /* AppDelegate.swift in Sources */,
+				E2E0A2172131F7C800F0DC48 /* RLMDataStore.swift in Sources */,
+				E2C24E022132D72F004A614C /* HttpResponse.swift in Sources */,
+				E285F5E6213372A2002EE51D /* WebViewController.swift in Sources */,
+				E2C24DFC2132D61E004A614C /* HttpError.swift in Sources */,
+				E2C24DEE21327544004A614C /* ImageRequest.swift in Sources */,
+				E2C24E0921332B34004A614C /* Dynamic.swift in Sources */,
+				E2C24DFA2132D22B004A614C /* SearchViewCell.swift in Sources */,
+				E2C24E0C21332BF4004A614C /* SearchViewModel.swift in Sources */,
+				E2C24DE9213274D9004A614C /* ASOperations.swift in Sources */,
+				E2E0A2192131FD5200F0DC48 /* FileHelper.swift in Sources */,
+				E2C24DE02132609C004A614C /* SavedPages.swift in Sources */,
+				E2C24DF521327590004A614C /* HttpNetworkWorker.swift in Sources */,
+				E2C24DDD21325AE6004A614C /* CodableExtensions.swift in Sources */,
+				E2C24E0E21332C1E004A614C /* SearchViewCellModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2C24DC921325904004A614C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2C24DD021325904004A614C /* WyQiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E2C24DD321325904004A614C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E202719C2131F49D00732822 /* WyQi */;
+			targetProxy = E2C24DD221325904004A614C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E20271A42131F49D00732822 /* Main.storyboard */ = {
@@ -352,7 +668,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2N2R452CN2;
-				INFOPLIST_FILE = WyQi/Info.plist;
+				INFOPLIST_FILE = "WyQi/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -371,7 +687,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2N2R452CN2;
-				INFOPLIST_FILE = WyQi/Info.plist;
+				INFOPLIST_FILE = "WyQi/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,6 +696,46 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E2C24DD521325904004A614C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2N2R452CN2;
+				INFOPLIST_FILE = WyQiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdbLabs.cs.WyQiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WyQi.app/WyQi";
+			};
+			name = Debug;
+		};
+		E2C24DD621325904004A614C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2N2R452CN2;
+				INFOPLIST_FILE = WyQiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdbLabs.cs.WyQiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WyQi.app/WyQi";
 			};
 			name = Release;
 		};
@@ -400,6 +756,15 @@
 			buildConfigurations = (
 				E20271B02131F49E00732822 /* Debug */,
 				E20271B12131F49E00732822 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2C24DD421325904004A614C /* Build configuration list for PBXNativeTarget "WyQiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2C24DD521325904004A614C /* Debug */,
+				E2C24DD621325904004A614C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
