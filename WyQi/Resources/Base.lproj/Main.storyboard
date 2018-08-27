@@ -150,7 +150,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jLZ-v9-gVB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Saved" id="QK8-J9-r3l"/>
+                    <navigationItem key="navigationItem" title="Saved" id="QK8-J9-r3l">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="JC2-Tb-fHd">
+                            <connections>
+                                <action selector="clearSavedData:" destination="dga-3P-qLB" id="0pq-YR-70c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="ch2-cd-4fp" id="ESi-KE-Dsb"/>
                     </connections>
