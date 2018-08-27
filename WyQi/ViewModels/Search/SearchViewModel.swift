@@ -26,8 +26,8 @@ class SearchViewModel {
         return pages.value.count
     }
     
-    func pageInfo(for index: Int) -> WPage {
-        return pages.value[index]
+    func pageInfo(for index: Int) -> PageInfo {
+        return pages.value[index].pageInfo()
     }
     
     func clearData() {
@@ -44,11 +44,6 @@ class SearchViewModel {
                 self?.pages.value = pages.sorted { $0.index < $1.index }
             }
         }
-    }
-    
-    func siteURL(for index: Int) -> URL? {
-        let title = pages.value[index].title
-        return Http.URLConfiguration.siteURL(title).formURL()
     }
     
     func viewModelForCell(at index: Int) -> SearchViewCellModel {

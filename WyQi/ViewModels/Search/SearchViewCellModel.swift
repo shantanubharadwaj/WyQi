@@ -10,19 +10,19 @@ import Foundation
 
 class SearchViewCellModel {
     
-    let pageInfo: WPage
+    let pageInfo: PageInfo
     let title: Dynamic<String>
     let body: Dynamic<String?>
     let thumbnail: Dynamic<Data?>
     
     var imagesService: ImageRequest?
     
-    init(info : WPage) {
+    init(info : PageInfo) {
         pageInfo = info
         title = Dynamic(pageInfo.title)
-        body = Dynamic(pageInfo.terms?.description.first)
+        body = Dynamic(pageInfo.body)
         thumbnail = Dynamic(nil)
-        if let url = pageInfo.thumbnail?.source {
+        if let url = pageInfo.imageSource {
             queryThumbnail(with: url)
         }
     }

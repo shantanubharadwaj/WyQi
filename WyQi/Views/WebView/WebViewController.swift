@@ -12,12 +12,13 @@ import WebKit
 class WebViewController: UIViewController {
 
     @IBOutlet weak var webView: WKWebView!
-    var loadURL: URL?
+    
+    var viewModel = WebViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(WebViewController.savePage)), animated: true)
-        if let url = loadURL {
+        if let url = viewModel.siteURL() {
             loadRequest(url)
         }
     }
@@ -27,7 +28,7 @@ class WebViewController: UIViewController {
     }
     
     @objc func savePage() {
-        
+        viewModel.saveLoadedData()
     }
     
     internal class func controllerFromStoryboard() -> WebViewController? {

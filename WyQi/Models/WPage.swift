@@ -21,6 +21,21 @@ struct WPage: Decodable {
     let title: String
     var terms: PageDescription?
     var thumbnail: Image?
+    
+    func siteURL() -> URL? {
+        return Http.URLConfiguration.siteURL(title).formURL()
+    }
+    
+    func pageInfo() -> PageInfo {
+        return PageInfo(title: title, body: terms?.description.first, imageName: nil, imageSource: thumbnail?.source)
+    }
+}
+
+struct PageInfo {
+    let title: String
+    var body: String?
+    var imageName: String?
+    var imageSource: URL?
 }
 
 struct Image: Decodable {

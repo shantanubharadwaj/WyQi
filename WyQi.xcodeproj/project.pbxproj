@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		44EC0B37B08FA47281B6E7BA /* Pods_WyQi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7A67F8E3E1B26B0F205124 /* Pods_WyQi.framework */; };
+		9A4DAD0E2134265B003B6A44 /* SavedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4DAD0D2134265B003B6A44 /* SavedViewModel.swift */; };
+		9A4DAD102134266B003B6A44 /* SavedViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4DAD0F2134266B003B6A44 /* SavedViewCellModel.swift */; };
+		9A8194212133C7B100F21603 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8194202133C7B100F21603 /* WebViewModel.swift */; };
+		9A8194262133CC3500F21603 /* SavedPagesDBHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8194252133CC3500F21603 /* SavedPagesDBHandler.swift */; };
+		9A8194282133D57500F21603 /* Results+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8194272133D57500F21603 /* Results+Extensions.swift */; };
+		9A81942D2133E4AE00F21603 /* SavedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A81942C2133E4AE00F21603 /* SavedPageViewController.swift */; };
+		9A81942F2133E4C500F21603 /* SavedPageTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A81942E2133E4C500F21603 /* SavedPageTVCell.swift */; };
 		E20271A12131F49D00732822 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20271A02131F49D00732822 /* AppDelegate.swift */; };
 		E20271A32131F49D00732822 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20271A22131F49D00732822 /* SearchViewController.swift */; };
 		E20271A62131F49D00732822 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20271A42131F49D00732822 /* Main.storyboard */; };
@@ -53,6 +60,13 @@
 		0B7A67F8E3E1B26B0F205124 /* Pods_WyQi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WyQi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		382BEEB65BB66221A0EE5317 /* Pods-WyQi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WyQi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WyQi/Pods-WyQi.debug.xcconfig"; sourceTree = "<group>"; };
 		67698D887AC86673A806590C /* Pods-WyQi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WyQi.release.xcconfig"; path = "Pods/Target Support Files/Pods-WyQi/Pods-WyQi.release.xcconfig"; sourceTree = "<group>"; };
+		9A4DAD0D2134265B003B6A44 /* SavedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewModel.swift; sourceTree = "<group>"; };
+		9A4DAD0F2134266B003B6A44 /* SavedViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewCellModel.swift; sourceTree = "<group>"; };
+		9A8194202133C7B100F21603 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
+		9A8194252133CC3500F21603 /* SavedPagesDBHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPagesDBHandler.swift; sourceTree = "<group>"; };
+		9A8194272133D57500F21603 /* Results+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Results+Extensions.swift"; sourceTree = "<group>"; };
+		9A81942C2133E4AE00F21603 /* SavedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPageViewController.swift; sourceTree = "<group>"; };
+		9A81942E2133E4C500F21603 /* SavedPageTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPageTVCell.swift; sourceTree = "<group>"; };
 		E202719D2131F49D00732822 /* WyQi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WyQi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E20271A02131F49D00732822 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E20271A22131F49D00732822 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +138,49 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9A4DAD0B2134261C003B6A44 /* SavedPages */ = {
+			isa = PBXGroup;
+			children = (
+				9A4DAD0D2134265B003B6A44 /* SavedViewModel.swift */,
+				9A4DAD0F2134266B003B6A44 /* SavedViewCellModel.swift */,
+			);
+			path = SavedPages;
+			sourceTree = "<group>";
+		};
+		9A4DAD0C21342632003B6A44 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				9A8194202133C7B100F21603 /* WebViewModel.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		9A8194232133CC0A00F21603 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				9A8194242133CC1800F21603 /* Handlers */,
+				E2C24DDE21325F88004A614C /* DBModels */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		9A8194242133CC1800F21603 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				9A8194252133CC3500F21603 /* SavedPagesDBHandler.swift */,
+			);
+			path = Handlers;
+			sourceTree = "<group>";
+		};
+		9A8194292133E22500F21603 /* SavedPages */ = {
+			isa = PBXGroup;
+			children = (
+				9A81942C2133E4AE00F21603 /* SavedPageViewController.swift */,
+				9A81942E2133E4C500F21603 /* SavedPageTVCell.swift */,
+			);
+			path = SavedPages;
+			sourceTree = "<group>";
+		};
 		E20271942131F49D00732822 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				E2C24DDC21325AE6004A614C /* CodableExtensions.swift */,
+				9A8194272133D57500F21603 /* Results+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -264,6 +322,8 @@
 		E2C24E0721332B1D004A614C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				9A4DAD0C21342632003B6A44 /* WebView */,
+				9A4DAD0B2134261C003B6A44 /* SavedPages */,
 				E2C24E0A21332BE3004A614C /* Search */,
 				E2C24E0821332B34004A614C /* Dynamic.swift */,
 			);
@@ -308,6 +368,7 @@
 		E2E0A2112131F74C00F0DC48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9A8194292133E22500F21603 /* SavedPages */,
 				E285F5E421337279002EE51D /* WebView */,
 				E2C24DF62132D179004A614C /* Search */,
 			);
@@ -317,7 +378,7 @@
 		E2E0A2122131F77A00F0DC48 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				E2C24DDE21325F88004A614C /* DBModels */,
+				9A8194232133CC0A00F21603 /* DB */,
 				E2E0A2132131F78B00F0DC48 /* RealmDB */,
 				E2E0A2182131FD5200F0DC48 /* FileHelper.swift */,
 			);
@@ -483,17 +544,23 @@
 			files = (
 				E2C24DEB2132750A004A614C /* RequestData.swift in Sources */,
 				E2C24E002132D6A5004A614C /* HttpRequest.swift in Sources */,
+				9A81942F2133E4C500F21603 /* SavedPageTVCell.swift in Sources */,
 				E2C24DE62132746A004A614C /* URLConfiguration.swift in Sources */,
 				E2C24DC8213253C7004A614C /* WPage.swift in Sources */,
 				E2C24DFE2132D65A004A614C /* HttpWorker.swift in Sources */,
 				E2E0A2152131F7BF00F0DC48 /* RLMDBHandler.swift in Sources */,
 				E20271A32131F49D00732822 /* SearchViewController.swift in Sources */,
 				E2C24E062132F7EF004A614C /* SearchWikiService.swift in Sources */,
+				9A8194282133D57500F21603 /* Results+Extensions.swift in Sources */,
 				E2C24DE2213260A9004A614C /* HistoryPages.swift in Sources */,
 				E2C24DF321327582004A614C /* HttpWorkerFactory.swift in Sources */,
+				9A81942D2133E4AE00F21603 /* SavedPageViewController.swift in Sources */,
 				E20271A12131F49D00732822 /* AppDelegate.swift in Sources */,
 				E2E0A2172131F7C800F0DC48 /* RLMDataStore.swift in Sources */,
+				9A4DAD0E2134265B003B6A44 /* SavedViewModel.swift in Sources */,
 				E2C24E022132D72F004A614C /* HttpResponse.swift in Sources */,
+				9A8194212133C7B100F21603 /* WebViewModel.swift in Sources */,
+				9A4DAD102134266B003B6A44 /* SavedViewCellModel.swift in Sources */,
 				E285F5E6213372A2002EE51D /* WebViewController.swift in Sources */,
 				E2C24DFC2132D61E004A614C /* HttpError.swift in Sources */,
 				E2C24DEE21327544004A614C /* ImageRequest.swift in Sources */,
@@ -501,6 +568,7 @@
 				E2C24DFA2132D22B004A614C /* SearchViewCell.swift in Sources */,
 				E2C24E0C21332BF4004A614C /* SearchViewModel.swift in Sources */,
 				E2C24DE9213274D9004A614C /* ASOperations.swift in Sources */,
+				9A8194262133CC3500F21603 /* SavedPagesDBHandler.swift in Sources */,
 				E2E0A2192131FD5200F0DC48 /* FileHelper.swift in Sources */,
 				E2C24DE02132609C004A614C /* SavedPages.swift in Sources */,
 				E2C24DF521327590004A614C /* HttpNetworkWorker.swift in Sources */,

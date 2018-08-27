@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol StoreFileInfo {
     associatedtype T
@@ -46,7 +47,27 @@ extension RLMDataStore {
                 return dbFilePath.appendingPathComponent("SavedData.realm")
             }
         }
+    }
+    
+    enum ObjectTypeList: StoreFileInfo {
+        case savedArticles
+
+        func get() -> [Object.Type] {
+            switch self {
+            case .savedArticles:
+                return [SavedPagesDB.self]
+            }
+        }
+    }
+    
+    enum DBConfig: StoreFileInfo {
+        case savedArticles
         
-        
+        func get() -> RLMDBConfig {
+            switch self {
+            case .savedArticles:
+                return RLMDBConfig(fileLocation: RLMDataStore.DBFile.savedArticles.get(), schemaVersion: RLMDataStore.DBSchemaVersion.savedArticles, shouldDeleteRealmIfMigrationNeeded: true, objectList: ObjectTypeList.savedArticles.get())
+            }
+        }
     }
 }

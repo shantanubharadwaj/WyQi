@@ -66,7 +66,7 @@ extension Http {
                 case .piprop:
                     return ("piprop","thumbnail")
                 case .pithumbsize:
-                    return ("pithumbsize","100")
+                    return ("pithumbsize","150")
                 case .pilimit:
                     return ("pilimit","30")
                 case .wbptterms:
