@@ -7,4 +7,21 @@
 //
 
 import Foundation
+import RealmSwift
 
+@objcMembers class HistoryPagesDB: Object {
+    dynamic var title: String = ""
+    dynamic var body: String? = nil
+    dynamic var imageName: String? = nil
+    
+    convenience init(_ title: String, body: String? = nil, imageName: String? = nil) {
+        self.init()
+        self.title = title
+        self.body = body
+        self.imageName = imageName
+    }
+    
+    override static func primaryKey() -> String? {
+        return "title"
+    }
+}

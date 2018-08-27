@@ -55,7 +55,7 @@ extension RLMDataStore {
         func get() -> [Object.Type] {
             switch self {
             case .savedArticles:
-                return [SavedPagesDB.self]
+                return [SavedPagesDB.self, HistoryPagesDB.self, HistorySearchDB.self]
             }
         }
     }

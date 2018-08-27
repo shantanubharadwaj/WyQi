@@ -20,6 +20,12 @@
 		E20271A62131F49D00732822 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20271A42131F49D00732822 /* Main.storyboard */; };
 		E20271A82131F49E00732822 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E20271A72131F49E00732822 /* Assets.xcassets */; };
 		E20271AB2131F49E00732822 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20271A92131F49E00732822 /* LaunchScreen.storyboard */; };
+		E21996DA213470FA008909E9 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21996D9213470FA008909E9 /* HistoryViewModel.swift */; };
+		E21996DC21347345008909E9 /* HistoryViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21996DB21347345008909E9 /* HistoryViewCellModel.swift */; };
+		E21996DF21347416008909E9 /* HistoryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21996DE21347416008909E9 /* HistoryPageViewController.swift */; };
+		E21996E12134742C008909E9 /* HistoryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21996E02134742C008909E9 /* HistoryTVCell.swift */; };
+		E21996E321347D55008909E9 /* HistorySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21996E221347D55008909E9 /* HistorySearch.swift */; };
+		E251EB2121349C82003C2B6E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E251EB2021349C82003C2B6E /* Reachability.swift */; };
 		E285F5E6213372A2002EE51D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E285F5E5213372A2002EE51D /* WebViewController.swift */; };
 		E2C24DC8213253C7004A614C /* WPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24DC7213253C7004A614C /* WPage.swift */; };
 		E2C24DD021325904004A614C /* WyQiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C24DCF21325904004A614C /* WyQiTests.swift */; };
@@ -74,6 +80,12 @@
 		E20271A72131F49E00732822 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E20271AA2131F49E00732822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E20271AC2131F49E00732822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E21996D9213470FA008909E9 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		E21996DB21347345008909E9 /* HistoryViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewCellModel.swift; sourceTree = "<group>"; };
+		E21996DE21347416008909E9 /* HistoryPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPageViewController.swift; sourceTree = "<group>"; };
+		E21996E02134742C008909E9 /* HistoryTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTVCell.swift; sourceTree = "<group>"; };
+		E21996E221347D55008909E9 /* HistorySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySearch.swift; sourceTree = "<group>"; };
+		E251EB2021349C82003C2B6E /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		E285F5E5213372A2002EE51D /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		E2C24DC7213253C7004A614C /* WPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPage.swift; sourceTree = "<group>"; };
 		E2C24DCD21325904004A614C /* WyQiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WyQiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +229,24 @@
 			path = WyQi;
 			sourceTree = "<group>";
 		};
+		E21996D821346F98008909E9 /* HistoryPages */ = {
+			isa = PBXGroup;
+			children = (
+				E21996D9213470FA008909E9 /* HistoryViewModel.swift */,
+				E21996DB21347345008909E9 /* HistoryViewCellModel.swift */,
+			);
+			path = HistoryPages;
+			sourceTree = "<group>";
+		};
+		E21996DD213473F2008909E9 /* HistoryPages */ = {
+			isa = PBXGroup;
+			children = (
+				E21996DE21347416008909E9 /* HistoryPageViewController.swift */,
+				E21996E02134742C008909E9 /* HistoryTVCell.swift */,
+			);
+			path = HistoryPages;
+			sourceTree = "<group>";
+		};
 		E285F5E421337279002EE51D /* WebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +286,7 @@
 			children = (
 				E2C24DDF2132609C004A614C /* SavedPages.swift */,
 				E2C24DE1213260A9004A614C /* HistoryPages.swift */,
+				E21996E221347D55008909E9 /* HistorySearch.swift */,
 			);
 			path = DBModels;
 			sourceTree = "<group>";
@@ -263,6 +294,7 @@
 		E2C24DE3213273D8004A614C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E251EB2021349C82003C2B6E /* Reachability.swift */,
 				E2C24DE4213273DF004A614C /* Networking */,
 			);
 			path = Services;
@@ -322,6 +354,7 @@
 		E2C24E0721332B1D004A614C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				E21996D821346F98008909E9 /* HistoryPages */,
 				9A4DAD0C21342632003B6A44 /* WebView */,
 				9A4DAD0B2134261C003B6A44 /* SavedPages */,
 				E2C24E0A21332BE3004A614C /* Search */,
@@ -368,6 +401,7 @@
 		E2E0A2112131F74C00F0DC48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E21996DD213473F2008909E9 /* HistoryPages */,
 				9A8194292133E22500F21603 /* SavedPages */,
 				E285F5E421337279002EE51D /* WebView */,
 				E2C24DF62132D179004A614C /* Search */,
@@ -544,6 +578,8 @@
 			files = (
 				E2C24DEB2132750A004A614C /* RequestData.swift in Sources */,
 				E2C24E002132D6A5004A614C /* HttpRequest.swift in Sources */,
+				E251EB2121349C82003C2B6E /* Reachability.swift in Sources */,
+				E21996E12134742C008909E9 /* HistoryTVCell.swift in Sources */,
 				9A81942F2133E4C500F21603 /* SavedPageTVCell.swift in Sources */,
 				E2C24DE62132746A004A614C /* URLConfiguration.swift in Sources */,
 				E2C24DC8213253C7004A614C /* WPage.swift in Sources */,
@@ -551,11 +587,15 @@
 				E2E0A2152131F7BF00F0DC48 /* RLMDBHandler.swift in Sources */,
 				E20271A32131F49D00732822 /* SearchViewController.swift in Sources */,
 				E2C24E062132F7EF004A614C /* SearchWikiService.swift in Sources */,
+				E21996E321347D55008909E9 /* HistorySearch.swift in Sources */,
 				9A8194282133D57500F21603 /* Results+Extensions.swift in Sources */,
 				E2C24DE2213260A9004A614C /* HistoryPages.swift in Sources */,
 				E2C24DF321327582004A614C /* HttpWorkerFactory.swift in Sources */,
 				9A81942D2133E4AE00F21603 /* SavedPageViewController.swift in Sources */,
+				E21996DC21347345008909E9 /* HistoryViewCellModel.swift in Sources */,
+				E21996DA213470FA008909E9 /* HistoryViewModel.swift in Sources */,
 				E20271A12131F49D00732822 /* AppDelegate.swift in Sources */,
+				E21996DF21347416008909E9 /* HistoryPageViewController.swift in Sources */,
 				E2E0A2172131F7C800F0DC48 /* RLMDataStore.swift in Sources */,
 				9A4DAD0E2134265B003B6A44 /* SavedViewModel.swift in Sources */,
 				E2C24E022132D72F004A614C /* HttpResponse.swift in Sources */,

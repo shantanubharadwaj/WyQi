@@ -37,8 +37,14 @@ class SearchViewCell: UITableViewCell {
         
         viewModel.thumbnail.bind { [weak self] (imgData) in
             OperationQueue.main.addOperation {
+                var didDisplay = false
+                self?.thumbImage.isHidden = false
                 if let data = imgData, let image = UIImage(data: data) {
                     self?.thumbImage.image = image
+                    didDisplay = true
+                }
+                if !didDisplay {
+                    self?.thumbImage.isHidden = true
                 }
             }
         }

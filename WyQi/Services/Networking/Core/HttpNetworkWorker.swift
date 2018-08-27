@@ -45,7 +45,7 @@ extension Http{
             
             let session = URLSession(configuration:sessionConfiguration, delegate:self, delegateQueue:nil)
             
-            print("HTTPWorker[\(creator)]::sending http request:<\(request)>.")
+//            print("HTTPWorker[\(creator)]::sending http request:<\(request)>.")
             
 
             let dataTask = session.dataTask(with: request.urlRequest)
@@ -54,8 +54,8 @@ extension Http{
             //create request meta data
             let requestMetaData = RequestMetaData(request, session: session, task: dataTask, success: success, error: error)
             self.setMetaData(requestMetaData, id: request.id.uuidString)
-            print("HTTPWorker[\(self.creator)]::sessionConfiguration http headers:<\(String(describing: session.configuration.httpAdditionalHeaders))>.")
-            print("HTTPWorker[\(self.creator)]::request http headers:<\(String(describing: request.urlRequest.allHTTPHeaderFields))>.")
+//            print("HTTPWorker[\(self.creator)]::sessionConfiguration http headers:<\(String(describing: session.configuration.httpAdditionalHeaders))>.")
+//            print("HTTPWorker[\(self.creator)]::request http headers:<\(String(describing: request.urlRequest.allHTTPHeaderFields))>.")
             
             dataTask.resume()
         }
@@ -93,7 +93,7 @@ extension Http{
         fileprivate func metaData(_ id: String) -> RequestMetaData? {
             var metaData: RequestMetaData?
             DispatchQueue.global().sync { [unowned self] in
-                print("HTTPWorker[\(self.creator)]::returning metadata for: \(id)")
+//                print("HTTPWorker[\(self.creator)]::returning metadata for: \(id)")
                 metaData = self.metaDataHolder[id]
             }
             
@@ -102,9 +102,9 @@ extension Http{
         
         fileprivate func setMetaData(_ metaData: RequestMetaData, id: String){
             DispatchQueue.global().sync { [unowned self] in
-                print("HTTPWorker[\(self.creator)]::setting new meta data for: \(id)")
+//                print("HTTPWorker[\(self.creator)]::setting new meta data for: \(id)")
                 self.metaDataHolder[id] = metaData
-                print("HTTPWorker[\(self.creator)]::active requests after set: \(Array(self.metaDataHolder.keys))")
+//                print("HTTPWorker[\(self.creator)]::active requests after set: \(Array(self.metaDataHolder.keys))")
             }
         }
         
@@ -143,7 +143,7 @@ extension Http{
 extension Http.NetworkConnector: URLSessionDataDelegate{
     //MARK:- URLSessionDelegate
     func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?){
-        print("HTTPWorker[\(self.creator)]::session became invalid with error:<\(String(describing: error))>")
+//        print("HTTPWorker[\(self.creator)]::session became invalid with error:<\(String(describing: error))>")
     }
     
     //MARK:- URLSessionTaskDelegate
@@ -164,51 +164,51 @@ extension Http.NetworkConnector: URLSessionDataDelegate{
                 }
             }else{
                 if let validResponse = metaData.httpURLResponse {
-                    print("HTTPWorker[\(String(describing: self.creator))]::valid response present, returning success. Data length: \(String(describing: metaData.data?.count)).)")
+//                    print("HTTPWorker[\(String(describing: self.creator))]::valid response present, returning success. Data length: \(String(describing: metaData.data?.count)).)")
                     let httpResponse = Http.Response(httpResponse: validResponse, data: metaData.data
                         , finalURL: validResponse.url)
                     metaData.urlSession.finishTasksAndInvalidate()
                     metaData.successHandler(httpRequest, httpResponse)
                     self.removeMetaData(metaData.httpRequest.id.uuidString)
                 }else{
-                    print("HTTPWorker[\(self.creator)]::invalid response present, returning success.")
+//                    print("HTTPWorker[\(self.creator)]::invalid response present, returning success.")
                     metaData.urlSession.finishTasksAndInvalidate()
                     metaData.errorHandler(httpRequest, Http.Error(code: Http.ErrorCodes.invalidResponse.rawValue))
                     self.removeMetaData(metaData.httpRequest.id.uuidString)
                 }
             }
         }else{
-            print("HTTPWorker[\(self.creator)]::failed to get meta data of the request, error.")
+//            print("HTTPWorker[\(self.creator)]::failed to get meta data of the request, error.")
         }
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, willPerformHTTPRedirection response: HTTPURLResponse, newRequest request: URLRequest, completionHandler: @escaping (URLRequest?) -> Void) {
         if let metaData = self.metaData(task.taskDescription!){
             metaData.httpURLResponse = response
-            print("HTTPWorker[\(self.creator)]::should perform auto redirect:<\(metaData.httpRequest.autoRedirects)> to request:<\(request)>")
+//            print("HTTPWorker[\(self.creator)]::should perform auto redirect:<\(metaData.httpRequest.autoRedirects)> to request:<\(request)>")
             
             if metaData.httpRequest.autoRedirects {
-                print("HTTPWorker[\(self.creator)]willPerformHTTPRedirection:: called the completion handler for auto redirect")
+//                print("HTTPWorker[\(self.creator)]willPerformHTTPRedirection:: called the completion handler for auto redirect")
                 completionHandler(request)
             }else{
                 completionHandler(nil)
-                print("HTTPWorker[\(self.creator)]willPerformHTTPRedirection:: called the completion handler")
+//                print("HTTPWorker[\(self.creator)]willPerformHTTPRedirection:: called the completion handler")
                 
             }
         }else{
             completionHandler(nil)
-            print("HttpWorker[\(self.creator)]::URLSession(session,task,willPerformHTTPRedirection,newRequest,completionHandler)::failed to get meta data of the request, error.")
+//            print("HttpWorker[\(self.creator)]::URLSession(session,task,willPerformHTTPRedirection,newRequest,completionHandler)::failed to get meta data of the request, error.")
         }
     }
     
     //MARK:- URLSessionDataDelegate
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
         
-        print("HTTPWorker[\(self.creator)]::did receive response:<\(response)>")
+//        print("HTTPWorker[\(self.creator)]::did receive response:<\(response)>")
         
         if let metaData = self.metaData(dataTask.taskDescription!){
             guard let validResponse = response as? HTTPURLResponse else {
-                print("HttpWorker[\(self.creator)]::failed to unwrap response, canceling HTTP.")
+//                print("HttpWorker[\(self.creator)]::failed to unwrap response, canceling HTTP.")
                 metaData.urlSession.finishTasksAndInvalidate()
                 metaData.errorHandler(metaData.httpRequest, Http.Error(code: Http.ErrorCodes.invalidResponse.rawValue))
                 self.removeMetaData(dataTask.taskDescription!)
@@ -220,11 +220,11 @@ extension Http.NetworkConnector: URLSessionDataDelegate{
             metaData.httpURLResponse = validResponse
             self.initializeData(metaData.httpRequest.id.uuidString)
             
-            print("HttpWorker[\(self.creator)]::valid response, proceeding with the HTTP request.")
+//            print("HttpWorker[\(self.creator)]::valid response, proceeding with the HTTP request.")
             completionHandler(.allow)
         }else{
             completionHandler(.cancel)
-            print("HttpWorker[\(self.creator)]::URLSession(session,dataTask,didReceiveResponse,completionHandler):: failed to get meta data of the request, error.")
+//            print("HttpWorker[\(self.creator)]::URLSession(session,dataTask,didReceiveResponse,completionHandler):: failed to get meta data of the request, error.")
             return
         }
     }

@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import SVProgressHUD
 
 class WebViewController: UIViewController {
 
@@ -20,11 +21,9 @@ class WebViewController: UIViewController {
         self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(WebViewController.savePage)), animated: true)
         if let url = viewModel.siteURL() {
             loadRequest(url)
+        }else{
+            SVProgressHUD.showError(withStatus: "Website cannot be loaded")
         }
-    }
-    
-    @IBAction func wvsearchPressed(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "gotoSearchFromWeb", sender: self)
     }
     
     @objc func savePage() {

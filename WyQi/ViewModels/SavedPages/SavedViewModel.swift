@@ -10,6 +10,7 @@ import Foundation
 
 class SavedViewModel {
     var savedObjects: Dynamic<Array<PageInfo>> = Dynamic([PageInfo]())
+    let reachability = Reachability()
     
     func numberOfSections() -> Int {
         if savedObjects.value.count > 0 {
@@ -19,9 +20,17 @@ class SavedViewModel {
         }
     }
     
+    var isReachable: Bool {
+        guard let reachability = reachability else {
+            return true
+        }
+        let status = reachability.connection
+        return (status == .wifi || status == .cellular) ? true : false
+    }
+    
     func retriveSavedData() {
         savedObjects.value.removeAll()
-        if let objects = SavedPagesDBHandler.extractData() {
+        if let objects = SavedPagesDBHandler.extractSavedData() {
             savedObjects.value = objects
         }
     }
@@ -36,7 +45,7 @@ class SavedViewModel {
     
     func clearData() {
         savedObjects.value.removeAll()
-        SavedPagesDBHandler.clearData()
+        SavedPagesDBHandler.clearSavedData()
     }
     
     func viewModelForCell(at index: Int) -> SavedViewCellModel {

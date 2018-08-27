@@ -1,8 +1,8 @@
 //
-//  SearchViewController.swift
+//  HistoryPageViewController.swift
 //  WyQi
 //
-//  Created by Shantanu Dutta on 26/08/18.
+//  Created by Shantanu Dutta on 27/08/18.
 //  Copyright © 2018 Shantanu Dutta. All rights reserved.
 //
 
@@ -10,57 +10,46 @@ import UIKit
 import ChameleonFramework
 import SVProgressHUD
 
-class SearchViewController: UIViewController {
-    
-    @IBOutlet weak var searchBar: UISearchBar!
+class HistoryPageViewController: UIViewController {
+
     @IBOutlet weak var tableView: UITableView!
-    
-    var viewModel = SearchViewModel()
+    var viewModel = HistoryViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.separatorStyle = .none
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.separatorColor = UIColor(white: 0.95, alpha: 1)
         tableView.backgroundColor = UIColor(white: 0.95, alpha: 1)
         navigationController?.navigationBar.tintColor = FlatBlack()
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.tabBarController?.tabBar.isHidden = false
-        self.title = "Search"
-        viewModel.pages.bind { [unowned self] (array) in
+        self.title = "History"
+        viewModel.historyObjects.bind { [unowned self] (array) in
             OperationQueue.main.addOperation {
                 self.tableView.reloadData()
             }
         }
-        viewModel.isSearchInProgress.bind { (status) in
-            OperationQueue.main.addOperation {
-                if status {
-                    if !UIApplication.shared.isNetworkActivityIndicatorVisible {
-                        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-                    }
-                }else{
-                    if UIApplication.shared.isNetworkActivityIndicatorVisible {
-                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    }
-                }
-            }
-        }
     }
     
+    @IBAction func clearHistoryData(_ sender: UIBarButtonItem) {
+        viewModel.clearData()
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.tabBarController?.tabBar.isHidden = false
-        self.title = "Search"
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        searchBar.resignFirstResponder()
+        self.title = "History"
+        DispatchQueue.global().async { [unowned self] in
+            self.viewModel.retriveHistoryData()
+        }
     }
     
     func displayWebView(with pageInfo:PageInfo) {
+        guard viewModel.isReachable else {
+            SVProgressHUD.showError(withStatus: "Device Offline !!! Please try later :)")
+            return
+        }
         if let viewController = WebViewController.controllerFromStoryboard(){
             viewController.viewModel.pageInfo = pageInfo
             OperationQueue.main.addOperation {
@@ -75,13 +64,9 @@ class SearchViewController: UIViewController {
             SVProgressHUD.showError(withStatus: "Link cannot be displayed")
         }
     }
-    
-    func saveHistoryData(for index:Int) {
-        viewModel.saveHistoryData(for: index)
-    }
 }
 
-extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+extension HistoryPageViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         let sections = viewModel.numberOfSections()
         if sections > 0 {
@@ -89,10 +74,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
                 tableView.backgroundView = nil
             }
             return sections
-        }else if viewModel.isSearchInProgress.value == false {
+        }else {
             // Displaying a message when the table is empty
             let messagelabel = UILabel(frame: CGRect(x: 10, y: 10, width: view.bounds.size.width, height: CGFloat(20)))
-            messagelabel.text = "No recent searches yet"
+            messagelabel.text = "No history searches"
             messagelabel.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
             messagelabel.numberOfLines = 0
             messagelabel.textAlignment = .center
@@ -107,11 +92,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.backgroundColor = FlatWhite()
             tableView.separatorStyle = .none
             return sections
-        }else{
-            if let _ = tableView.backgroundView {
-                tableView.backgroundView = nil
-            }
-            return sections
         }
     }
     
@@ -120,43 +100,21 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTVCell", for: indexPath) as! SearchViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTVCell", for: indexPath) as! HistoryTVCell
         cell.viewModel = viewModel.viewModelForCell(at: indexPath.row)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let siteInfo = viewModel.pageInfo(for: indexPath.row)
+        let siteInfo = viewModel.savedInfo(for: indexPath.row)
         displayWebView(with: siteInfo)
-        saveHistoryData(for: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if searchBar.isFocused {
-            cell.alpha = 0
-            UIView.animate(withDuration: 0.1) {
-                cell.alpha = 1.0
-            }
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.1) {
+            cell.alpha = 1.0
         }
-    }
-}
-
-extension SearchViewController: UISearchBarDelegate{
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = ""
-        viewModel.clearData()
-        searchBar.resignFirstResponder()
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        guard let searchValue = searchBar.text, !searchValue.isEmpty else { print("Please enter some valid values to search"); return }
-        viewModel.query(for: searchValue)
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("textDidChange : \(String(describing: searchBar.text)) , searchText : \(searchText)")
-        viewModel.query(for: searchText)
     }
 }

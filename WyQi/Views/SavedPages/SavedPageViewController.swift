@@ -33,27 +33,34 @@ class SavedPageViewController: UIViewController {
         }
     }
     
+    @IBAction func clearSavedData(_ sender: UIBarButtonItem) {
+        viewModel.clearData()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.tabBarController?.tabBar.isHidden = false
         self.title = "Saved"
-        viewModel.retriveSavedData()
+        DispatchQueue.global().async { [unowned self] in
+            self.viewModel.retriveSavedData()
+        }
     }
     
     func displayWebView(with pageInfo:PageInfo) {
+        guard viewModel.isReachable else {
+            SVProgressHUD.showError(withStatus: "Device Offline !!! Please try later :)")
+            return
+        }
         if let viewController = WebViewController.controllerFromStoryboard(){
             viewController.viewModel.pageInfo = pageInfo
-            if let _ = viewController.viewModel.pageInfo.imageSource {
-                OperationQueue.main.addOperation {
-                    if let navigator = self.navigationController {
-                        navigator.navigationBar.prefersLargeTitles = false
-                        self.tabBarController?.tabBar.isHidden = true
-                        navigator.pushViewController(viewController, animated: true)
-                    }
+            OperationQueue.main.addOperation {
+                if let navigator = self.navigationController {
+                    navigator.navigationBar.prefersLargeTitles = false
+                    self.tabBarController?.tabBar.tintColor = UIColor.clear
+                    self.tabBarController?.tabBar.isHidden = true
+                    navigator.pushViewController(viewController, animated: true)
                 }
-            }else{
-                SVProgressHUD.showError(withStatus: "Website cannot be displayed")
             }
         }else{
             SVProgressHUD.showError(withStatus: "Link cannot be displayed")
