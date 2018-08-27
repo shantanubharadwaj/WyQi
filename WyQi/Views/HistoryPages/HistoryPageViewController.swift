@@ -55,7 +55,6 @@ class HistoryPageViewController: UIViewController {
             OperationQueue.main.addOperation {
                 if let navigator = self.navigationController {
                     navigator.navigationBar.prefersLargeTitles = false
-                    self.tabBarController?.tabBar.tintColor = UIColor.clear
                     self.tabBarController?.tabBar.isHidden = true
                     navigator.pushViewController(viewController, animated: true)
                 }
